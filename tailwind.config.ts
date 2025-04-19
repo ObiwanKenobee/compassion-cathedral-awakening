@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,35 +62,74 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom cathedral colors
+				sacred: {
+					DEFAULT: '#9b87f5',
+					light: '#E5DEFF',
+					dark: '#7E69AB',
+				},
+				ivory: {
+					DEFAULT: '#F1F0FB',
+					light: '#FFFFFF',
+					dark: '#E5E3F1',
+				},
+				gold: {
+					DEFAULT: '#E6C27A',
+					light: '#F7E2B3',
+					dark: '#C99E45',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				serif: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'sans-serif'],
+			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
+				'fade-out': {
+					'0%': { opacity: '1' },
+					'100%': { opacity: '0' },
+				},
+				'candle-flicker': {
+					'0%, 100%': { transform: 'translateX(0) scale(1)' },
+					'10%': { transform: 'translateX(-1px) scale(1.02)' },
+					'30%': { transform: 'translateX(1px) scale(0.98)' },
+					'50%': { transform: 'translateX(-1px) scale(1.01)' },
+					'70%': { transform: 'translateX(2px) scale(0.99)' },
+				},
+				'pulse-glow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-out': 'fade-out 0.5s ease-out',
+				'candle-flicker': 'candle-flicker 3s infinite ease-in-out',
+				'pulse-glow': 'pulse-glow 2s infinite ease-in-out',
+			},
+			backdropFilter: {
+				'none': 'none',
+				'blur': 'blur(20px)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
