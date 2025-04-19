@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Candle } from 'lucide-react';
+import { Flame } from 'lucide-react';  // Changed from 'Candle' to 'Flame'
 import { Button } from '@/components/ui/button';
 import { 
   Dialog, 
@@ -49,7 +49,7 @@ const PrayerCandle = ({ className }: PrayerCandleProps) => {
           onClick={handleLightCandle}
         >
           <div className={`relative ${isLit ? 'animate-candle-flicker' : ''}`}>
-            <Candle size={42} className={isLit ? 'text-gold' : 'text-muted-foreground'} />
+            <Flame size={42} className={isLit ? 'text-gold' : 'text-muted-foreground'} />
             {isLit && (
               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-6 h-8 bg-gradient-to-t from-gold-light to-transparent rounded-full animate-pulse-glow"></div>
             )}
